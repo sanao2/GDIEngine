@@ -2,7 +2,7 @@
 
 void SceneManager::Initialize()
 {
-
+	
 }
 
 void SceneManager::Update()
@@ -15,10 +15,15 @@ void SceneManager::Render()
 
 }
 
-void SceneManager::ChangeScene() // ÇöÀç ¾ÀÀÌ º¯°æ ‰çÀ» ¶§ ´ÙÀ½ ¾ÀÀ¸·Î º¯°æÇÑ´Ù. 
+void SceneManager::ShoutDown()
+{
+}
+
+void SceneManager::ChangeScene() // í˜„ì¬ ì”¬ì´ ë³€ê²½ ë¬ì„ ë•Œ ë‹¤ìŒ ì”¬ìœ¼ë¡œ ë³€ê²½í•œë‹¤. 
 {
 	if (next_Scene)
 	{
 		cur_Scene = next_Scene; 
+		next_Scene = nullptr;
 	}
 }
