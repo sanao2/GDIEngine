@@ -2,30 +2,32 @@
 #include <vector>
 using::std::vector; 
 
-// ¾À ÀüÈ¯°ü¸®. 
-// ¼¼°³(play, Menu, End) ÀÇ ¾ÀÀ» °ü¸®ÇÏ°í, »óÈ²¿¡ ¸Â°Ô º¯°æÇÒ ¼ö ÀÖµµ·Ï ÇÑ´Ù. 
+// ì”¬ ì „í™˜ê´€ë¦¬. 
+// ì„¸ê°œ(play, Menu, End) ì˜ ì”¬ì„ ê´€ë¦¬í•˜ê³ , ìƒí™©ì— ë§ê²Œ ë³€ê²½í•  ìˆ˜ ìˆë„ë¡ í•œë‹¤. 
 enum struct Scenes
 {
 	PLAY,
 	MENU,
-	END
+	END,
+	SceneCount
 };
 
 class SceneManager
 {
 public : 
-	Scenes*			cur_Scene;	// ÇöÀç ¾À 
-	Scenes*			next_Scene; // ´ÙÀ½ ¾À 
-	vector<Scenes*> v_Scene;	// ¾À ¸®½ºÆ® 
+	Scenes*			cur_Scene;	// í˜„ì¬ ì”¬ 
+	Scenes*			next_Scene; // ë‹¤ìŒ ì”¬ 
+	vector<Scenes*> Scene_List;	// ì”¬ ë¦¬ìŠ¤íŠ¸ 
 
-	void Setcur_Scene(Scenes* Sceneindex) {	next_Scene = Sceneindex;}
-
+	void Setcur_Scene(Scenes* Sceneindex) { cur_Scene = Sceneindex;}
+	void Setnext_Scene(Scenes* Sceneindex) { next_Scene = Sceneindex; }
 private : 
-	// °¢ ¾ÀÀÇ ÇÔ¼ö È£Ãâ¿ë. 
+	// ê° ì”¬ë§ˆë‹¤ ê°€ìƒ í•¨ìˆ˜ í˜¸ì¶œìš©. 
 	void Initialize(); 
 	void Update(); 
 	void Render(); 
-	
+
+	void ShoutDown(); 
 	void ChangeScene(); 
 
 	
